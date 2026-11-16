@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b10">
+  <title>Embossed Button Animation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <h1>Embossed Button Animation</h1>
+    <section class="effects" id="effects">
+      <article class="effect-card">
+        <div class="demo"><button class="embossed slide-down" type="button">Slide Down</button></div>
+        <pre><code>.slide-down {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+.slide-down::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: #667eea;
+  transform: translateY(-101%);
+  transition: transform .4s cubic-bezier(.25,1,.5,1);
+  z-index: -1;
+}
+.slide-down:hover::before {
+  transform: translateY(0);
+}
+.slide-down:hover {
+  color: #fff;
+}</code></pre>
+      </article>
+
+      <article class="effect-card">
+        <div class="demo"><button class="embossed slide-up" type="button">Slide Up</button></div>
+        <pre><code>.slide-up {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+.slide-up::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: #667eea;
+  transform: translateY(101%);
+  transition: transform .4s cubic-bezier(.25,1,.5,1);
+  z-index: -1;
+}
+.slide-up:hover::before {
+  transform: translateY(0);
+}
+.slide-up:hover {
+  color: #fff;
+}</code></pre>
+      </article>
+
+      <article class="effect-card">
+        <div class="demo"><button class="embossed diagonal-sweep" type="button">Diagonal<br>Sweep</button></div>
+        <pre><code>.diagonal-sweep {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+.diagonal-sweep::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #667eea;
+  transform: translate(-110%, 110%);
+  transition: transform .45s cubic-bezier(.25,1,.5,1);
+  z-index: -1;
+}
+.diagonal-sweep:hover::before {
+  transform: translate(0, 0);
+}
+.diagonal-sweep:hover {
+  color: #fff;
+}</code></pre>
+      </article>
+
+      <article class="effect-card">
+        <div class="demo"><button class="embossed expand-x" type="button">Expand X</button></div>
+        <pre><code>.expand-x {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+.expand-x::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #667eea;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .4s cubic-bezier(.25,1,.5,1);
+  z-index: -1;
+}
+.expand-x:hover::before {
+  transform: scaleX(1);
+}
+.expand-x:hover {
+  color: #fff;
+}</code></pre>
+      </article>
+
+      <article class="effect-card">
+        <div class="demo"><button class="embossed expand-y" type="button">Expand Y</button></div>
+        <pre><code>.expand-y {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+.expand-y::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #667eea;
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform .4s cubic-bezier(.25,1,.5,1);
+  z-index: -1;
+}
+.expand-y:hover::before {
+  transform: scaleY(1);
+}
+.expand-y:hover {
+  color: #fff;
+}</code></pre>
+      </article>
+
+      <article class="effect-card">
+        <div class="demo"><button class="embossed split-slide" type="button">Split Slide</button></div>
+        <pre><code>.split-slide {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+.split-slide::before,
+.split-slide::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background: #667eea;
+  transition: transform .4s cubic-bezier(.25,1,.5,1);
+  z-index: -1;
+}
+.split-slide::before {
+  left: 0;
+  transform: translateX(-101%);
+}
+.split-slide::after {
+  right: 0;
+  transform: translateX(101%);
+}
+.split-slide:hover::before,
+.split-slide:hover::after {
+  transform: translateX(0);
+}
+.split-slide:hover { color: #fff; }</code></pre>
+      </article>
+
+      <article class="effect-card">
+        <div class="demo"><button class="embossed corner-grow" type="button">Corner Grow</button></div>
+        <pre><code>.corner-grow {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+.corner-grow::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-radius: 0 0 100% 0;
+  background: #667eea;
+  transition: width .45s ease, height .45s ease;
+  z-index: -1;
+}
+.corner-grow:hover::before {
+  width: 180%;
+  height: 220%;
+}
+.corner-grow:hover { color: #fff; }</code></pre>
+      </article>
+    </section>
+    <p class="hint">Hover over each embossed button to preview its transition.</p>
+  </main>
+</body>
+</html>
